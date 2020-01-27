@@ -1,0 +1,2 @@
+Criado por Haskell Brooks Curry, o Combinador Y é uma expressão λ que
+devolve um ponto fixo para qualquer função λ

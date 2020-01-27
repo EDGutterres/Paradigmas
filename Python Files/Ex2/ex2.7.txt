@@ -1,0 +1,24 @@
+Codificação de Church é uma forma de incorporar dados e operadores ao cálculo Lambda.
+Os numerais de Church são representações dos números naturais através da codificação de Church.
+
+n ≡ λf.λx. f^n x
+
+0 ≡ λf.λx. x
+1 ≡ λf.λx. f x
+2 ≡ λf.λx. f (f x)
+3 ≡ λf.λx. f (f (f x))
+4 = λf.λx. f (f (f (f x)))
+5 = λf.λx. f (f (f f( (f x))))
+6 = λf.λx. f (f (f (f f( (f x)))))
+7 = λf.λx. f (f (f (f (f f( (f x))))))
+8 = λf.λx. f (f (f (f (f (f f( (f x)))))))
+9 = λf.λx. f (f (f (f (f (f (f f( (f x))))))))
+10 = λf.λx. f (f (f (f (f (f (f (f f( (f x)))))))))
+
+função sucessor: λn.λf.λx. f (n f x)
+função soma: λm.λn.λf.λx. m f (n f x)
+função multiplicar: λm.λn.λf.λx. m (n f) x
+função exponencial: λm.λn. n (mult m) 1
+função predecessor: λn.λf.λx. n (λg.λh. h (g f)) (λu. x) (λu. u)
+função subtração: λm.λn. (n pred) m
+função =0?: λn. n (λx.F) T
